@@ -29,25 +29,31 @@ if(isset($_GET['jogar'])){
     $dado2Computador = rand(1,6);
 
     echo '<br>Dado 1 Usuário:    ' . strval($dado1Usuario)    . '<br>';
+    echo '<img height = 300 width = 300 src="Imagens/'. strval($dado1Usuario) .'.gif"/>';
     echo '<br>Dado 2 Usuário:    ' . strval($dado2Usuario)    . '<br>';
-    echo '<br>Dado 1 Computador: ' . strval($dado1Usuario)    . '<br>';
+    echo '<img height = 300 width = 300 src="Imagens/'. strval($dado2Usuario) .'.gif"/>';
+    
+    echo '<br>Dado 1 Computador: ' . strval($dado1Computador)    . '<br>';
+    echo '<img height = 300 width = 300 src="Imagens/'. strval($dado1Computador) .'.gif"/>';
     echo '<br>Dado 2 Computador: ' . strval($dado2Computador) . '<br>';
+    echo '<img height = 300 width = 300 src="Imagens/'. strval($dado2Computador) .'.gif"/>';
 
     $somaDadoUsuario    = $dado1Usuario    + $dado2Usuario;
     $somaDadoComputador = $dado2Computador + $dado2Computador;
       if($somaDadoUsuario > $somaDadoComputador){
-          echo 'Usuário ganhou!';
+          echo '<br>Usuário ganhou!';
         }else{
           if($somaDadoUsuario < $somaDadoComputador){
-            echo 'Computador ganhou!';
+            echo '<br>Computador ganhou!';
           }else{
-            echo 'Empate!';
+            echo '<br>Empate!';
           }
         }
 
       }
 
     ?>
+
 
 
     
