@@ -17,9 +17,40 @@
 <body>
 
   <div>
+  <a class="btn btn-primary" href="index.php?jogar=1" role="button">Jogar Dados</a>
+
+<?php
+
+if(isset($_GET['jogar'])){
+
+    $dado1Usuario    = rand(1,6);
+    $dado1Computador = rand(1,6);
+    $dado2Usuario    = rand(1,6);
+    $dado2Computador = rand(1,6);
+
+    echo '<br>Dado 1 Usuário:    ' . strval($dado1Usuario)    . '<br>';
+    echo '<br>Dado 2 Usuário:    ' . strval($dado2Usuario)    . '<br>';
+    echo '<br>Dado 1 Computador: ' . strval($dado1Usuario)    . '<br>';
+    echo '<br>Dado 2 Computador: ' . strval($dado2Computador) . '<br>';
+
+    $somaDadoUsuario    = $dado1Usuario    + $dado2Usuario;
+    $somaDadoComputador = $dado2Computador + $dado2Computador;
+      if($somaDadoUsuario > $somaDadoComputador){
+          echo 'Usuário ganhou!';
+        }else{
+          if($somaDadoUsuario < $somaDadoComputador){
+            echo 'Computador ganhou!';
+          }else{
+            echo 'Empate!';
+          }
+        }
+
+      }
+
+    ?>
 
 
-    <input type="button" value="Jogador1" onclick="window.alert(random_element(v));">
+    
   
 
 
